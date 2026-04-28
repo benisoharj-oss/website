@@ -1,0 +1,19 @@
+# User-agent: * means these rules apply to all web crawlers
+User-agent: *
+
+# Allow crawling of the entire site
+Allow: /
+
+# Disallow crawling of specific directories (Adjust based on your stack)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /drafts/
+
+# Optional: Disallow bots from indexing specific file types if needed
+# Disallow: /*.pdf$
+# Disallow: /*.ppt$
+
+# Link to your sitemap to help SEO (Replace with your actual URL)
+Sitemap: https://yourportfolio.com/sitemap.xml
