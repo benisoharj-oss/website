@@ -1,19 +1,29 @@
-# User-agent: * means these rules apply to all web crawlers
+# User-agent: * applies to all search engines (Google, Bing, etc.)
 User-agent: *
 
-# Allow crawling of the entire site
+# Allow indexing of the main business areas
 Allow: /
+Allow: /applications
+Allow: /projects
 
-# Disallow crawling of specific directories (Adjust based on your stack)
+# Disallow administrative and private directories
 Disallow: /admin/
 Disallow: /api/
-Disallow: /private/
-Disallow: /tmp/
-Disallow: /drafts/
+Disallow: /scripts/
+Disallow: /temp/
 
-# Optional: Disallow bots from indexing specific file types if needed
-# Disallow: /*.pdf$
-# Disallow: /*.ppt$
+# Disallow legal/disclaimer pages from appearing in primary search snippets 
+# (Optional: keep these for direct links only)
+Disallow: /disclaimer
+Disallow: /privacy-policy
 
-# Link to your sitemap to help SEO (Replace with your actual URL)
-Sitemap: https://yourportfolio.com/sitemap.xml
+# Block crawling of specific file types often used in app development
+Disallow: /*.json$
+Disallow: /*.log$
+
+# Specific rule for AI crawlers (Optional: keeps your content out of AI training sets)
+# User-agent: GPTBot
+# Disallow: /
+
+# Link to your sitemap (Ensure this file exists at your root)
+Sitemap: https://www.benisoha.com/sitemap.xml
